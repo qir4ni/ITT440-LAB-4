@@ -1,3 +1,4 @@
+//Testing file for receiving messages
 #include <stdio.h>
 #include <sys/socket.h>
 #include <arpa/inet.h>	//inet_addr
@@ -8,7 +9,7 @@ int main(int argc, char *argv[])
 {
 	int socket_desc;
 	struct sockaddr_in server;
-	char *message, *server_reply;
+	char *message, *server_reply, *msg;
 
 	//Create socket
 	socket_desc = socket(AF_INET, SOCK_STREAM, 0);
@@ -47,6 +48,7 @@ int main(int argc, char *argv[])
 	{
 		puts("recv failed");
 	}
+	
 	puts("Reply received\n");
 	puts(server_reply);
 
